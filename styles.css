@@ -1,0 +1,156 @@
+body {
+	margin: 0;
+	font-family: Arial, sans-serif;
+	background: linear-gradient(
+		90deg,
+		rgba(0, 0, 0, 1) 0%,
+		rgb(57, 57, 57) 50%,
+		rgba(0, 0, 0, 1) 100%
+	);
+	color: #ffffff;
+}
+
+.container {
+	display: flex;
+	height: 100vh;
+}
+
+.sidebar {
+	width: 50px;
+	background-color: #111111;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	padding-top: 20px;
+	border-radius: 10px;
+	margin: 10px;
+}
+
+.icon {
+	margin-bottom: 20px;
+	cursor: pointer;
+	transition: transform 0.3s ease;
+}
+
+.icon:hover {
+	transform: scale(1.1);
+}
+
+.icon img {
+	width: 30px;
+	height: 30px;
+	transition: filter 0.3s;
+}
+
+.icon.active img {
+	filter: brightness(0.5);
+}
+
+.main-content {
+	flex-grow: 1;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+	padding: 20px;
+	animation: fade-in 1s ease-in-out;
+}
+
+.profile-header {
+	text-align: center;
+	max-width: 400px;
+}
+
+.profile-image {
+	width: 150px;
+	height: 150px;
+	border-radius: 50%;
+	margin-bottom: 20px;
+	opacity: 100;
+}
+
+.profile-name {
+	font-size: 24px;
+	margin: 0;
+}
+
+.profile-text {
+	margin-top: 10px;
+	font-size: 16px;
+	color: #cccccc;
+	transition:
+		opacity 0.3s,
+		transform 0.3s;
+}
+
+.contact-buttons {
+	margin-top: 20px;
+	text-align: center;
+}
+
+.button {
+	display: inline-block;
+	border: 2px solid #4a90e2;
+	border-radius: 10px;
+	color: #4a90e2;
+	padding: 10px 20px;
+	text-decoration: none;
+	font-size: 16px;
+	margin: 5px;
+	transition:
+		background-color 0.3s,
+		color 0.3s,
+		transform 0.3s;
+	position: relative;
+}
+
+.button:hover {
+	background-color: #4a90e2;
+	color: #ffffff;
+	transform: translateY(-3px);
+}
+
+.button img {
+	max-width: 16px;
+	max-height: 16px;
+	vertical-align: middle;
+	margin-right: 8px;
+}
+
+.hidden {
+	opacity: 0;
+	transform: translateY(-5px);
+}
+
+.dimmed {
+	opacity: 0.5;
+	pointer-events: none;
+}
+
+.active {
+	opacity: 1;
+}
+
+@keyframes pop-up {
+	0% {
+		transform: scale(0.9);
+		opacity: 0;
+	}
+	100% {
+		transform: scale(1);
+		opacity: 1;
+	}
+}
+
+.pop-up {
+	animation: pop-up 0.3s ease-in-out;
+}
+
+@keyframes fade-in {
+	0% {
+		opacity: 0;
+	}
+	100% {
+		opacity: 1;
+	}
+}
